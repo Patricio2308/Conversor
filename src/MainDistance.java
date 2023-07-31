@@ -1,3 +1,5 @@
+import com.sun.tools.javac.Main;
+
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -33,7 +35,7 @@ public class MainDistance {
                 distConvertion(1/0.3048,"m","ft",scanner);
                 break;
             default:
-                System.out.println("Error");
+                ;
         }
     }
 

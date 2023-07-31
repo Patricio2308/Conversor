@@ -13,13 +13,6 @@ public class Tasas {
 
     }
 
-    /*
-    static {
-        ARG = 1;
-        USD = 500;
-    }
-     */
-
     public Tasas() {
     }
 
