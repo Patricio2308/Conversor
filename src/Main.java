@@ -23,7 +23,7 @@ public class Main {
                 MainTemperature.selection(scanner);
                 break;
             case 3:
-                System.out.println("eligió distancia");
+                MainDistance.selection(scanner);
                 break;
             default:
                 System.out.println("No se ha elegido una opción adecuada");
