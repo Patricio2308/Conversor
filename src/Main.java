@@ -1,17 +1,34 @@
+import java.util.Scanner;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+
     public static void main(String[] args) {
-        // Press Alt+Intro with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("------------------------------");
+        System.out.println("Seleccione que desea convertir");
+        System.out.println("1-Moneda");
+        System.out.println("2-Temperatura");
+        System.out.println("3-Distancia");
+        System.out.println("------------------------------");
+        Scanner scanner = new Scanner(System.in);
+        int res = scanner.nextInt();
 
-            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        switch (res){
+            case 1:
+                System.out.println("eligió moneda");
+                break;
+            case 2:
+                MainTemperature.selection(scanner);
+                break;
+            case 3:
+                System.out.println("eligió distancia");
+                break;
+            default:
+                System.out.println("No se ha elegido una opción adecuada");
         }
+        scanner.close();
+        System.out.println("------------------------------");
     }
 }
