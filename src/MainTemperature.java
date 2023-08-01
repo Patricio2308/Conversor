@@ -11,7 +11,8 @@ public class MainTemperature {
                             "3 °C a °K\n" +
                             "4 °K a °C\n" +
                             "5 °F a °K\n" +
-                            "6 °K a °F");
+                            "6 °K a °F\n" +
+                            "7 Volver");
         //scanner.nextInt();
         switch (scanner.nextInt()){
             case 1:
@@ -32,8 +33,10 @@ public class MainTemperature {
             case 6:
                 tempConvertion(6,"°K","°F",scanner);
                 break;
+            case 7:
+                Main.menuConversor(scanner);
             default:
-                System.out.println("Error");
+                MainTemperature.selection(scanner);
         }
     }
 

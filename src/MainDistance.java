@@ -1,5 +1,3 @@
-import com.sun.tools.javac.Main;
-
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -13,7 +11,8 @@ public class MainDistance {
                             "3 Metros a Kilometros\n" +
                             "4 Kilometros a Metros\n" +
                             "5 Pies a Metros\n" +
-                            "6 Metros a Pies");
+                            "6 Metros a Pies\n" +
+                            "7 Volver");
 
         switch (scanner.nextInt()){
             case 1:
@@ -34,8 +33,10 @@ public class MainDistance {
             case 6:
                 distConvertion(1/0.3048,"m","ft",scanner);
                 break;
+            case 7:
+                Main.menuConversor(scanner);
             default:
-                ;
+                MainDistance.selection(scanner);
         }
     }
 

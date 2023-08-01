@@ -1,8 +1,8 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class Tasas {
-    //static String ARG, USD;
-    private static HashMap<String, Float> hash = new HashMap<>();
+    public static Map<String, Float> hash = new HashMap<>();
     static {
         hash.put("ARG", 1F);
         hash.put("USD", 0.00383436F);
@@ -13,10 +13,15 @@ public class Tasas {
 
     }
 
+    public static Float getHash(String arg) {
+        return hash.get(arg);
+    }
+
     public Tasas() {
     }
 
-    public static HashMap<String, Float> getHash() {
-        return hash;
-    }
+
+
+
+
 }

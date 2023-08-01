@@ -64,40 +64,4 @@ public class MainCurrency {
 
     }
 
-// 1P-----500D
-// xP-----resD
-    // resD = xP * 500D / 1P
-    // res = cant * final / base
-//    private String name;
-//    private String simbolo;
-//    private double value;
-//
-//    public Currency(String name, double value) {
-//        this.name = name;
-//        this.value = value;
-//    }
-//
-//    public String getNombre() {
-//        return name;
-//    }
-//
-//    public void setNombre(String nombre) {
-//        this.name = nombre;
-//    }
-//
-//    public String getSimbolo() {
-//        return simbolo;
-//    }
-//
-//    public void setSimbolo(String simbolo) {
-//        this.simbolo = simbolo;
-//    }
-//
-//    public double getValue() {
-//        return value;
-//    }
-//
-//    public void setValue(double value) {
-//        this.value = value;
-//    }
 }
