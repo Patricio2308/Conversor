@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class LayoutConversor extends JFrame{
     private JPanel panel;
@@ -16,15 +18,30 @@ public class LayoutConversor extends JFrame{
     private JPanel PanelBotones, buttonX;
     private JButton calcButton, cleanButton;
     private JMenu masMenu;
-    private JTextPane textPane1,textPane2;
+    private JTextField textPane1,textPane2;
     private JComboBox comboBox1;
     private JButton botonConvertir;
     private JLabel xClose;
     private JLabel _Min;
 
+    private String textValue;
+
 
     public LayoutConversor() {
 
+
+        textPane1.setBorder(null);
+        textPane2.setBorder(null);
+
+
+        cargarListaOpciones();
+        comboBox1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MainCurrency.getCurrency(comboBox1.getSelectedIndex());
+                System.out.println("Opción seleccionada: " + comboBox1.getSelectedIndex());
+            }
+        });
         sobreMenuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,7 +71,14 @@ public class LayoutConversor extends JFrame{
         calcButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Hola");
+                try {
+                    if(comboBox1.getSelectedItem() != "Select" && !textPane1.getText().trim().isEmpty()){
+                        textValue = MainCurrency.currencyConvertion(Double.parseDouble(textPane1.getText()));
+                        textPane2.setText(textValue);
+                    }
+                } catch (Exception err){
+                    textPane1.setText("");
+                }
             }
         });
         cleanButton.addActionListener(new ActionListener() {
@@ -65,8 +89,11 @@ public class LayoutConversor extends JFrame{
             }
         });
     }
-    public void cajasDeTExto(){
-
+    public void cargarListaOpciones(){
+        for (String e:MainCurrency.getLista()
+        ) {
+            comboBox1.addItem(e);
+        }
     }
 
     public static void main(String[] args) {

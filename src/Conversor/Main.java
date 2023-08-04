@@ -23,7 +23,7 @@ public class Main {
         int res = scanner.nextInt();
         switch (res){
             case 1:
-                MainCurrency.selection(scanner);
+                //MainCurrency.selection(scanner);
                 break;
             case 2:
                 MainTemperature.selection(scanner);

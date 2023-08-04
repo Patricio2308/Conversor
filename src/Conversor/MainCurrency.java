@@ -1,73 +1,83 @@
 package Conversor;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class MainCurrency {
 
     private static String modo = "moneda";
+    private static Double cotizacion;
+    private static String[] lista = {"Peso a Dolar","Peso a Euro","Peso a Libra Esterlina","Peso a Yen","Peso a Won",
+                                "Dolar a Peso","Euro a Peso","Libra Esterlina a Peso","Yen a Peso","Won a Peso"};
     public static String getModo() {
         return modo;
     }
-    static void selection(Scanner scanner){
-        System.out.println("Menú "+ modo);
-        System.out.println("elija su conversion de moneda:");
-        System.out.println( "1 Peso a Dolar\n" +
-                            "2 Peso a Euro\n" +
-                            "3 Peso a Libra Esterlina\n" +
-                            "4 Peso a Yen\n" +
-                            "5 Peso a Won\n" +
-                            "6 Dolar a Peso\n" +
-                            "7 Euro a Peso\n" +
-                            "8 Libra Esterlina a Peso\n" +
-                            "9 Yen a Peso\n" +
-                            "10 Won a Peso\n" +
-                            "11 Volver");
-        switch (scanner.nextInt()){
-            case 1:
-                currencyConvertion(scanner,273.65361,1);
+//    static void selection(Scanner scanner){
+//        System.out.println("Menú "+ modo);
+//        System.out.println("elija su conversion de moneda:");
+//        System.out.println( "1 Peso a Dolar\n" +
+//                            "2 Peso a Euro\n" +
+//                            "3 Peso a Libra Esterlina\n" +
+//                            "4 Peso a Yen\n" +
+//                            "5 Peso a Won\n" +
+//                            "6 Dolar a Peso\n" +
+//                            "7 Euro a Peso\n" +
+//                            "8 Libra Esterlina a Peso\n" +
+//                            "9 Yen a Peso\n" +
+//                            "10 Won a Peso\n" +
+//                            "11 Volver");
+
+    private static Double getTag(String paisBase, String paisFinal){
+        return Tasas.hash.get(paisFinal) / Tasas.hash.get(paisBase);
+    }
+    public static void getCurrency(int valor){
+        switch (valor){
+            case 1 :
+                cotizacion = getTag("ARG","USD");
                 break;
             case 2:
-                currencyConvertion(scanner,301,1);
+                cotizacion = getTag("ARG","EU");
                 break;
             case 3:
-                currencyConvertion(scanner,352.490,1);
+                cotizacion = getTag("ARG","GBP");
                 break;
             case 4:
-                currencyConvertion(scanner,1.93122,1);
+                cotizacion = getTag("ARG","JPY");
                 break;
             case 5:
-                currencyConvertion(scanner,0.215008,1);
+                cotizacion = getTag("ARG","KRW");
                 break;
             case 6:
-                currencyConvertion(scanner,1,273.65361);
+                cotizacion = getTag("USD","ARG");
                 break;
             case 7:
-                currencyConvertion(scanner,1,301.980);
+                cotizacion = getTag("EU","ARG");
                 break;
             case 8:
-                currencyConvertion(scanner,1,352.490);
+                cotizacion = getTag("GBP","ARG");
                 break;
             case 9:
-                currencyConvertion(scanner,1,1.93122);
+                cotizacion = getTag("JPY","ARG");
                 break;
             case 10:
-                currencyConvertion(scanner,1,0.215008);
+                cotizacion = getTag("KRW","ARG");
                 break;
-            case 11:
-                Main.menuConversor(scanner);
             default:
-                MainCurrency.selection(scanner);
+                System.out.println("error de cotización");;
+    }}
+
+    public static String currencyConvertion(Double quantity) {
+        DecimalFormat deci = new DecimalFormat("#.##");
+        Double res = null;
+        try {
+            res = quantity * cotizacion;
+        } catch (Exception e){
+            System.out.println("error de calculo " + e.getMessage());
         }
+        return deci.format(res);
     }
 
-    private static void currencyConvertion(Scanner scanner, double baseCurrency, double finalCurrency) {
-        System.out.println("Ingrese la cantidad a convertir");
-        double quantity = scanner.nextDouble();
-        double res = quantity * finalCurrency / baseCurrency;
-        //DecimalFormat deci = new DecimalFormat("#.##");
-        //System.out.println("El resultado es "+ deci.format(res));
-        System.out.println("El resultado es "+ res);
-
+    public static String[] getLista() {
+        return lista;
     }
-
 }

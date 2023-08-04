@@ -4,18 +4,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Tasas {
-    public static Map<String, Float> hash = new HashMap<>();
+    public static Map<String, Double> hash = new HashMap<>();
     static {
-        hash.put("ARG", 1F);
-        hash.put("USD", 0.00383436F);
-        hash.put("EU", 0.0034931118F);
-        hash.put("GBP", 0.0029863955F);
-        hash.put("JPY", 0.54495122F);
-        hash.put("KRW", 4.9785451F);
+        hash.put("ARG", 1D);
+        hash.put("USD", 0.00358767D);
+        hash.put("EU", 0.00325895D);
+        hash.put("GBP", 0.00281492D);
+        hash.put("JPY", 0.508612D);
+        hash.put("KRW", 4.67811D);
 
     }
 
-    public static Float getHash(String arg) {
+    public static Double getHash(String arg) {
         return hash.get(arg);
     }
 
