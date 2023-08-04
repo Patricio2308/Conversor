@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Conversor.LayoutConversor">
+  <grid id="27dc6" binding="panel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="595" height="458"/>
+    </constraints>
+    <properties>
+      <background color="-5922391"/>
+      <enabled value="false"/>
+      <opaque value="true"/>
+      <preferredSize width="295" height="180"/>
+    </properties>
+    <border type="line">
+      <color color="-12499888"/>
+    </border>
+    <children>
+      <grid id="1ebd" binding="panelCentral" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints border-constraint="Center"/>
+        <properties>
+          <background color="-5262397"/>
+          <enabled value="false"/>
+          <inheritsPopupMenu value="false"/>
+          <opaque value="false"/>
+          <preferredSize width="224" height="80"/>
+        </properties>
+        <clientProperties>
+          <html.disable class="java.lang.Boolean" value="false"/>
+        </clientProperties>
+        <border type="none">
+          <font/>
+        </border>
+        <children>
+          <grid id="fc55e" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="200" height="25"/>
+                <maximum-size width="300" height="25"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="2dbfb" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <model>
+                    <item value="Select"/>
+                  </model>
+                  <toolTipText value=""/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="1c24b" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <opaque value="false"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="44c3a" class="javax.swing.JTextPane" binding="textPane1" default-binding="true">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="1" height="1"/>
+                    <maximum-size width="150" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Arial" size="16"/>
+                  <margin top="10" left="3" bottom="3" right="3"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="2b15c" class="javax.swing.JTextPane" binding="textPane2" default-binding="true">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="1" height="1"/>
+                    <maximum-size width="150" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <dragEnabled value="false"/>
+                  <editable value="true"/>
+                  <enabled value="true"/>
+                  <focusable value="true"/>
+                  <font name="Arial" size="16"/>
+                  <margin top="10" left="3" bottom="3" right="3"/>
+                  <requestFocusEnabled value="true"/>
+                  <verifyInputWhenFocusTarget value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="5c252" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <alignmentY value="0.5"/>
+              <text value="Indique la cantidad a convertir"/>
+              <verticalAlignment value="0"/>
+              <verticalTextPosition value="0"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="98f72" binding="BarraMenu" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="7b13" class="javax.swing.JMenuBar" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <background color="-12499888"/>
+              <borderPainted value="false"/>
+              <inheritsPopupMenu value="false"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <requestFocusEnabled value="true"/>
+              <verifyInputWhenFocusTarget value="true"/>
+            </properties>
+            <border type="none">
+              <title-color color="-1118482"/>
+            </border>
+            <children>
+              <grid id="fbbe0" class="javax.swing.JMenu" binding="menuConversor" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                <constraints/>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <foreground color="-2301710"/>
+                  <text value="Conversor"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="38335" class="javax.swing.JMenuItem" binding="item1">
+                    <constraints/>
+                    <properties>
+                      <text value="Moneda"/>
+                    </properties>
+                  </component>
+                  <component id="d9009" class="javax.swing.JMenuItem" binding="item2">
+                    <constraints/>
+                    <properties>
+                      <text value="Distancia"/>
+                    </properties>
+                  </component>
+                  <component id="93b77" class="javax.swing.JMenuItem" binding="item3">
+                    <constraints/>
+                    <properties>
+                      <text value="Temperatura"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="ce636" class="javax.swing.JMenu" binding="masMenu" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                <constraints/>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <foreground color="-2301710"/>
+                  <text value="Más"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="34252" class="javax.swing.JMenuItem" binding="sobreMenuItem">
+                    <constraints/>
+                    <properties>
+                      <text value="Sobre"/>
+                    </properties>
+                  </component>
+                  <component id="e1a6d" class="javax.swing.JMenuItem" binding="cerrarMenuItem">
+                    <constraints/>
+                    <properties>
+                      <text value="Cerrar"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="31e" binding="buttonX" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints border-constraint="East"/>
+            <properties>
+              <alignmentX value="0.0"/>
+              <background color="-12499888"/>
+              <minimumSize width="5" height="5"/>
+              <opaque value="true"/>
+              <preferredSize width="60" height="5"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="e80e" class="javax.swing.JLabel" binding="xClose">
+                <constraints border-constraint="East"/>
+                <properties>
+                  <font name="BIZ UDGothic" size="16" style="1"/>
+                  <foreground color="-1118482"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <maximumSize width="60" height="40"/>
+                  <minimumSize width="5" height="5"/>
+                  <preferredSize width="30" height="30"/>
+                  <text value="×"/>
+                  <verticalAlignment value="0"/>
+                </properties>
+              </component>
+              <component id="ac7a8" class="javax.swing.JLabel" binding="_Min">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <font name="Courier New" size="20" style="0"/>
+                  <foreground color="-2301710"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <preferredSize width="20" height="20"/>
+                  <text value="─"/>
+                  <verticalAlignment value="0"/>
+                  <verticalTextPosition value="0"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="ab7d6" binding="PanelBotones" layout-manager="FlowLayout" hgap="35" vgap="15" flow-align="1">
+        <constraints border-constraint="South"/>
+        <properties>
+          <background color="-12499888"/>
+          <enabled value="true"/>
+          <focusCycleRoot value="false"/>
+          <font/>
+          <opaque value="false"/>
+          <visible value="true"/>
+        </properties>
+        <clientProperties>
+          <html.disable class="java.lang.Boolean" value="false"/>
+        </clientProperties>
+        <border type="none">
+          <title-color color="-4473925"/>
+        </border>
+        <children>
+          <component id="3bf88" class="javax.swing.JButton" binding="calcButton">
+            <constraints/>
+            <properties>
+              <enabled value="true"/>
+              <font name="BIZ UDPGothic"/>
+              <hideActionText value="false"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="11"/>
+              <text value="Convertir"/>
+              <verticalAlignment value="0"/>
+            </properties>
+          </component>
+          <component id="17e7b" class="javax.swing.JButton" binding="cleanButton">
+            <constraints/>
+            <properties>
+              <font name="BIZ UDPGothic"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="11"/>
+              <text value="Resetear"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

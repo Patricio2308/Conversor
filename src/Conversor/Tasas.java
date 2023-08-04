@@ -1,3 +1,5 @@
+package Conversor;
+
 import java.util.HashMap;
 import java.util.Map;
 

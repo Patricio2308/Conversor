@@ -1,3 +1,5 @@
+package Conversor;
+
 import java.util.Scanner;
 
 public class Main {

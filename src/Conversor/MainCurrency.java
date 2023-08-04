@@ -1,9 +1,15 @@
+package Conversor;
+
 import java.util.Scanner;
 
 public class MainCurrency {
 
+    private static String modo = "moneda";
+    public static String getModo() {
+        return modo;
+    }
     static void selection(Scanner scanner){
-        System.out.println("Menú moneda");
+        System.out.println("Menú "+ modo);
         System.out.println("elija su conversion de moneda:");
         System.out.println( "1 Peso a Dolar\n" +
                             "2 Peso a Euro\n" +
