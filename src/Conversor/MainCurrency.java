@@ -1,17 +1,18 @@
 package Conversor;
 
 import java.text.DecimalFormat;
-import java.util.Scanner;
 
-public class MainCurrency {
-
-    private static String modo = "moneda";
+public class MainCurrency extends MainValues {
     private static Double cotizacion;
-    private static String[] lista = {"Peso a Dolar","Peso a Euro","Peso a Libra Esterlina","Peso a Yen","Peso a Won",
+    String modoActual = "Moneda";
+    String[] listCurency = {"Peso a Dolar","Peso a Euro","Peso a Libra Esterlina","Peso a Yen","Peso a Won",
                                 "Dolar a Peso","Euro a Peso","Libra Esterlina a Peso","Yen a Peso","Won a Peso"};
-    public static String getModo() {
-        return modo;
+    @Override
+    protected void cargarModulo(){
+        setList(listCurency);
+        setModo(modoActual);
     }
+
 //    static void selection(Scanner scanner){
 //        System.out.println("Menú "+ modo);
 //        System.out.println("elija su conversion de moneda:");
@@ -27,10 +28,14 @@ public class MainCurrency {
 //                            "10 Won a Peso\n" +
 //                            "11 Volver");
 
+//    public void getCurrency1(){
+//
+//    }
     private static Double getTag(String paisBase, String paisFinal){
         return Tasas.hash.get(paisFinal) / Tasas.hash.get(paisBase);
     }
-    public static void getCurrency(int valor){
+    @Override
+    protected void getValuesToConvertion(int valor){
         switch (valor){
             case 1 :
                 cotizacion = getTag("ARG","USD");
@@ -77,7 +82,4 @@ public class MainCurrency {
         return deci.format(res);
     }
 
-    public static String[] getLista() {
-        return lista;
-    }
 }

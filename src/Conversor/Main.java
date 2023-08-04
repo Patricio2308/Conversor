@@ -26,10 +26,10 @@ public class Main {
                 //MainCurrency.selection(scanner);
                 break;
             case 2:
-                MainTemperature.selection(scanner);
+                //MainTemperature.selection(scanner);
                 break;
             case 3:
-                MainDistance.selection(scanner);
+                //MainDistance.selection(scanner);
                 break;
             default:
                 System.out.println("No se ha elegido una opción adecuada");

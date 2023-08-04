@@ -23,8 +23,8 @@ public class LayoutConversor extends JFrame{
     private JButton botonConvertir;
     private JLabel xClose;
     private JLabel _Min;
-
     private String textValue;
+    private MainValues modoC = new MainCurrency();
 
 
     public LayoutConversor() {
@@ -32,14 +32,21 @@ public class LayoutConversor extends JFrame{
 
         textPane1.setBorder(null);
         textPane2.setBorder(null);
-
-
+        modoC.cargarModulo();
         cargarListaOpciones();
         comboBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainCurrency.getCurrency(comboBox1.getSelectedIndex());
+                modoC.getValuesToConvertion(comboBox1.getSelectedIndex());
                 System.out.println("Opción seleccionada: " + comboBox1.getSelectedIndex());
+            }
+        });
+        item1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                modoC = new MainCurrency();
+                modoC.cargarModulo();
+                cargarListaOpciones();
             }
         });
         sobreMenuItem.addActionListener(new ActionListener() {
@@ -71,6 +78,7 @@ public class LayoutConversor extends JFrame{
         calcButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println("Estamos en modo "+ modoC.getModo());
                 try {
                     if(comboBox1.getSelectedItem() != "Select" && !textPane1.getText().trim().isEmpty()){
                         textValue = MainCurrency.currencyConvertion(Double.parseDouble(textPane1.getText()));
@@ -90,8 +98,7 @@ public class LayoutConversor extends JFrame{
         });
     }
     public void cargarListaOpciones(){
-        for (String e:MainCurrency.getLista()
-        ) {
+        for (String e: modoC.getList()) {
             comboBox1.addItem(e);
         }
     }
