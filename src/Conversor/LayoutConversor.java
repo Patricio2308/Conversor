@@ -29,8 +29,8 @@ public class LayoutConversor extends JFrame{
 
     public LayoutConversor() {
 
-        textPane1.setBorder(null);
-        textPane2.setBorder(null);
+        textPane1.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        textPane2.setBorder(BorderFactory.createLineBorder(Color.GRAY));
         modoC.cargarModulo();
         cargarListaOpciones();
         comboBox1.addActionListener(new ActionListener() {
@@ -44,8 +44,8 @@ public class LayoutConversor extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 modoC = new MainCurrency();
                 modoC.cargarModulo();
-                cargarLabelMode(modoC.getModo());
                 cargarListaOpciones();
+                cargarLabelMode(modoC.getModo());
             }
         });
         item2.addActionListener(new ActionListener() {
@@ -53,8 +53,8 @@ public class LayoutConversor extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 modoC = new MainDistance();
                 modoC.cargarModulo();
-                cargarLabelMode(modoC.getModo());
                 cargarListaOpciones();
+                cargarLabelMode(modoC.getModo());
             }
         });
         item3.addActionListener(new ActionListener() {
@@ -62,8 +62,8 @@ public class LayoutConversor extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 modoC = new MainTemperature();
                 modoC.cargarModulo();
-                cargarLabelMode(modoC.getModo());
                 cargarListaOpciones();
+                cargarLabelMode(modoC.getModo());
             }
         });
 
@@ -124,7 +124,7 @@ public class LayoutConversor extends JFrame{
         barraMenu.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
-                //super.mouseDragged(e);
+                super.mouseDragged(e);
                 int x = e.getXOnScreen();
                 int y = e.getYOnScreen();
                 setLocation(x - xMouse,y - yMouse);

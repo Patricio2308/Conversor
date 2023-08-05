@@ -5,14 +5,22 @@ public abstract class MainValues {
     private String modo = "";
     private String[] list = {};
 
-    protected void getValuesToConvertion(int value){
+
+    private String inicialSymbol = "$";
+    private String finalSymbol = "$";
+
+    protected abstract void getValuesToConvertion(int value);
         //Obtiene los valores del comboBox
-    }
+
     protected void cargarModulo(){
         //Carga lista y modo al seleccionar el elJMenuItem
     };
     protected abstract String convertion(Double valor);
 
+    protected void symbols(String ini, String fin){
+        inicialSymbol = ini;
+        finalSymbol = fin;
+    }
 
     public String[] getList() {
         return list;
@@ -25,5 +33,12 @@ public abstract class MainValues {
     }
     public void setModo(String modo) {
         this.modo = modo;
+    }
+    public String getInicialSymbol() {
+        return inicialSymbol;
+    }
+
+    public String getFinalSymbol() {
+        return finalSymbol;
     }
 }

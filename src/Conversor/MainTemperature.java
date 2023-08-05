@@ -25,31 +25,37 @@ public class MainTemperature extends MainValues{
     };
 
     @Override
-    protected String convertion(Double temp){
-        DecimalFormat deci = new DecimalFormat("#.##");
+    public String convertion(Double temp){
 
         switch (tipoEcuacion){
             case 1:
                 resultado = (temp * 1.8) + 32;
+                symbols("°C","°F");
                 break;
             case 2:
                 resultado = (temp - 32) / 1.8;
+                symbols("°F","°C");
                 break;
             case 3:
                 resultado = temp + 273.15;
+                symbols("°C","°K");
                 break;
             case 4:
                 resultado = temp - 273.15;
+                symbols("°K","°C");
                 break;
             case 5:
                 resultado = (temp + 459.67) / 1.8;
+                symbols("°F","°K");
                 break;
             case 6:
                 resultado = (temp * 1.8) - 459.67;
+                symbols("°K","°F");
                 break;
             default:
-                System.out.println("Error");
+                System.out.println();
         }
+        DecimalFormat deci = new DecimalFormat("#.##" + getFinalSymbol());
         return deci.format(resultado);
     }
 

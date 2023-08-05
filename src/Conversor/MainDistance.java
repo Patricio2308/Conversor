@@ -18,24 +18,30 @@ public class MainDistance extends MainValues{
         switch (valor){
             case 1:
                 proporcion = 0.01;
+                symbols("cm","m");
                 break;
             case 2:
                 proporcion = 100.0;
+                symbols("m","cm");
                 break;
             case 3:
                 proporcion = 0.001;
+                symbols("m","km");
                 break;
             case 4:
                 proporcion = 1000.0;
+                symbols("km","m");
                 break;
             case 5:
                 proporcion = 0.3048;
+                symbols("ft","m");
                 break;
             case 6:
                 proporcion = 1/0.3048;
+                symbols("m","ft");
                 break;
             default:
-                System.out.println("Error");
+                System.out.println();
         }
     }
     @Override
@@ -45,7 +51,7 @@ public class MainDistance extends MainValues{
     }
     @Override
     public String convertion(Double valor){
-        DecimalFormat deci = new DecimalFormat("#.##");
+        DecimalFormat deci = new DecimalFormat("#.##" + getFinalSymbol());
         Double res = valor * proporcion;
         return deci.format(res);
     }
