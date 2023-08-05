@@ -32,7 +32,7 @@ public class MainCurrency extends MainValues {
 //
 //    }
     private static Double getTag(String paisBase, String paisFinal){
-        return Tasas.hash.get(paisFinal) / Tasas.hash.get(paisBase);
+        return Tasas.getHash(paisFinal) / Tasas.getHash(paisBase);
     }
     @Override
     protected void getValuesToConvertion(int valor){
@@ -70,8 +70,8 @@ public class MainCurrency extends MainValues {
             default:
                 System.out.println("error de cotización");;
     }}
-
-    public static String currencyConvertion(Double quantity) {
+    @Override
+    public String convertion(Double quantity) {
         DecimalFormat deci = new DecimalFormat("#.##");
         Double res = null;
         try {

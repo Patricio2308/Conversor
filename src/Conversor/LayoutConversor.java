@@ -20,9 +20,9 @@ public class LayoutConversor extends JFrame{
     private JMenu masMenu;
     private JTextField textPane1,textPane2;
     private JComboBox comboBox1;
-    private JButton botonConvertir;
     private JLabel xClose;
     private JLabel _Min;
+    private JLabel labelMode;
     private String textValue;
     private MainValues modoC = new MainCurrency();
 
@@ -37,7 +37,7 @@ public class LayoutConversor extends JFrame{
         comboBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                modoC.getValuesToConvertion(comboBox1.getSelectedIndex());
+                modoC.getValuesToConvertion(comboBox1.getSelectedIndex() + 1);
                 System.out.println("Opción seleccionada: " + comboBox1.getSelectedIndex());
             }
         });
@@ -46,9 +46,20 @@ public class LayoutConversor extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 modoC = new MainCurrency();
                 modoC.cargarModulo();
+                labelMode.setText("Modo " + modoC.getModo());
                 cargarListaOpciones();
             }
         });
+        item2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                modoC = new MainDistance();
+                modoC.cargarModulo();
+                labelMode.setText("Modo " + modoC.getModo());
+                cargarListaOpciones();
+            }
+        });
+
         sobreMenuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -81,7 +92,7 @@ public class LayoutConversor extends JFrame{
                 System.out.println("Estamos en modo "+ modoC.getModo());
                 try {
                     if(comboBox1.getSelectedItem() != "Select" && !textPane1.getText().trim().isEmpty()){
-                        textValue = MainCurrency.currencyConvertion(Double.parseDouble(textPane1.getText()));
+                        textValue = modoC.convertion(Double.parseDouble(textPane1.getText()));
                         textPane2.setText(textValue);
                     }
                 } catch (Exception err){
@@ -98,6 +109,7 @@ public class LayoutConversor extends JFrame{
         });
     }
     public void cargarListaOpciones(){
+        comboBox1.removeAllItems();
         for (String e: modoC.getList()) {
             comboBox1.addItem(e);
         }

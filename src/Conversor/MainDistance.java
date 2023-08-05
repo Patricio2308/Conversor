@@ -1,53 +1,52 @@
 package Conversor;
 
 import java.text.DecimalFormat;
-import java.util.Scanner;
 
-public class MainDistance {
+public class MainDistance extends MainValues{
 
-    public static void selection(Scanner scanner){
-        System.out.println("Menú distancias");
-        System.out.println("elija su conversion de distancia:");
-        System.out.println( "1 Centímetros a Metros\n" +
-                            "2 Metros a Centímetros\n" +
-                            "3 Metros a Kilometros\n" +
-                            "4 Kilometros a Metros\n" +
-                            "5 Pies a Metros\n" +
-                            "6 Metros a Pies\n" +
-                            "7 Volver");
+    private static Double proporcion;
+    String[] temperatureList = {"Centímetros a Metros",
+                            "Metros a Centímetros",
+                            "Metros a Kilometros",
+                            "Kilometros a Metros",
+                            "Pies a Metros",
+                            "Metros a Pies"};
+    String modoActual = "Distancia";
 
-        switch (scanner.nextInt()){
+    @Override
+    protected void getValuesToConvertion(int valor){
+        switch (valor){
             case 1:
-                distConvertion(0.01,"cm","m",scanner);
+                proporcion = 0.01;
                 break;
             case 2:
-                distConvertion(100,"m","cm",scanner);
+                proporcion = 100.0;
                 break;
             case 3:
-                distConvertion(0.001,"m","km",scanner);
+                proporcion = 0.001;
                 break;
             case 4:
-                distConvertion(1000,"km","m",scanner);
+                proporcion = 1000.0;
                 break;
             case 5:
-                distConvertion(0.3048,"ft","m",scanner);
+                proporcion = 0.3048;
                 break;
             case 6:
-                distConvertion(1/0.3048,"m","ft",scanner);
+                proporcion = 1/0.3048;
                 break;
-            case 7:
-                Main.menuConversor(scanner);
             default:
-                MainDistance.selection(scanner);
+                System.out.println("Error");
         }
     }
-
-    private static void distConvertion(double prop, String orig, String dest, Scanner scanner){
-        System.out.println("Ingrese su valor en "+ orig +" a convertir:");
-        double valor = scanner.nextDouble();
-
-        double res = valor * prop;
+    @Override
+    protected void cargarModulo(){
+        setList(temperatureList);
+        setModo(modoActual);
+    }
+    @Override
+    public String convertion(Double valor){
         DecimalFormat deci = new DecimalFormat("#.##");
-        System.out.println("El resultado es "+ deci.format(res) + dest);
+        Double res = valor * proporcion;
+        return deci.format(res);
     }
 }

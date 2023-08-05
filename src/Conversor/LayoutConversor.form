@@ -34,20 +34,29 @@
           <grid id="fc55e" layout-manager="BorderLayout" hgap="0" vgap="0">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="200" height="25"/>
-                <maximum-size width="300" height="25"/>
+                <preferred-size width="200" height="50"/>
+                <maximum-size width="300" height="50"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <opaque value="false"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="2dbfb" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
-                <constraints border-constraint="Center"/>
+                <constraints border-constraint="Last"/>
                 <properties>
-                  <model>
-                    <item value="Select"/>
-                  </model>
+                  <model/>
+                  <preferredSize width="78" height="25"/>
                   <toolTipText value=""/>
+                </properties>
+              </component>
+              <component id="24738" class="javax.swing.JLabel" binding="labelMode">
+                <constraints border-constraint="North"/>
+                <properties>
+                  <horizontalAlignment value="0"/>
+                  <opaque value="false"/>
+                  <text value="Modo Moneda"/>
                 </properties>
               </component>
             </children>
@@ -99,6 +108,7 @@
             </constraints>
             <properties>
               <alignmentY value="0.5"/>
+              <font name="Courier New" size="15"/>
               <text value="Indique la cantidad a convertir"/>
               <verticalAlignment value="0"/>
               <verticalTextPosition value="0"/>

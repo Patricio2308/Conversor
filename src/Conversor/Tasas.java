@@ -14,16 +14,8 @@ public class Tasas {
         hash.put("KRW", 4.67811D);
 
     }
-
     public static Double getHash(String arg) {
         return hash.get(arg);
     }
-
-    public Tasas() {
-    }
-
-
-
-
 
 }

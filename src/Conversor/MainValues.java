@@ -8,8 +8,12 @@ public abstract class MainValues {
     protected void getValuesToConvertion(int value){
         //Obtiene los valores del comboBox
     }
+    protected void cargarModulo(){
+        //Carga lista y modo al seleccionar el elJMenuItem
+    };
+    protected abstract String convertion(Double valor);
 
-    protected void cargarModulo(){};
+
     public String[] getList() {
         return list;
     }
