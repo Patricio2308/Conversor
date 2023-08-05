@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 public class MainDistance extends MainValues{
 
     private static Double proporcion;
-    String[] temperatureList = {"Centímetros a Metros",
+    String[] distanceList = {"Centímetros a Metros",
                             "Metros a Centímetros",
                             "Metros a Kilometros",
                             "Kilometros a Metros",
@@ -40,7 +40,7 @@ public class MainDistance extends MainValues{
     }
     @Override
     protected void cargarModulo(){
-        setList(temperatureList);
+        setList(distanceList);
         setModo(modoActual);
     }
     @Override

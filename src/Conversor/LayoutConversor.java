@@ -29,7 +29,6 @@ public class LayoutConversor extends JFrame{
 
     public LayoutConversor() {
 
-
         textPane1.setBorder(null);
         textPane2.setBorder(null);
         modoC.cargarModulo();
@@ -38,7 +37,6 @@ public class LayoutConversor extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 modoC.getValuesToConvertion(comboBox1.getSelectedIndex() + 1);
-                System.out.println("Opción seleccionada: " + comboBox1.getSelectedIndex());
             }
         });
         item1.addActionListener(new ActionListener() {
@@ -46,7 +44,7 @@ public class LayoutConversor extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 modoC = new MainCurrency();
                 modoC.cargarModulo();
-                labelMode.setText("Modo " + modoC.getModo());
+                cargarLabelMode(modoC.getModo());
                 cargarListaOpciones();
             }
         });
@@ -55,7 +53,16 @@ public class LayoutConversor extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 modoC = new MainDistance();
                 modoC.cargarModulo();
-                labelMode.setText("Modo " + modoC.getModo());
+                cargarLabelMode(modoC.getModo());
+                cargarListaOpciones();
+            }
+        });
+        item3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                modoC = new MainTemperature();
+                modoC.cargarModulo();
+                cargarLabelMode(modoC.getModo());
                 cargarListaOpciones();
             }
         });
@@ -113,6 +120,9 @@ public class LayoutConversor extends JFrame{
         for (String e: modoC.getList()) {
             comboBox1.addItem(e);
         }
+    }
+    public void cargarLabelMode(String modo){
+        labelMode.setText("Modo " + modo);
     }
 
     public static void main(String[] args) {

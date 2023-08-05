@@ -5,32 +5,14 @@ import java.text.DecimalFormat;
 public class MainCurrency extends MainValues {
     private static Double cotizacion;
     String modoActual = "Moneda";
-    String[] listCurency = {"Peso a Dolar","Peso a Euro","Peso a Libra Esterlina","Peso a Yen","Peso a Won",
+    String[] curencyList = {"Peso a Dolar","Peso a Euro","Peso a Libra Esterlina","Peso a Yen","Peso a Won",
                                 "Dolar a Peso","Euro a Peso","Libra Esterlina a Peso","Yen a Peso","Won a Peso"};
     @Override
     protected void cargarModulo(){
-        setList(listCurency);
+        setList(curencyList);
         setModo(modoActual);
     }
 
-//    static void selection(Scanner scanner){
-//        System.out.println("Menú "+ modo);
-//        System.out.println("elija su conversion de moneda:");
-//        System.out.println( "1 Peso a Dolar\n" +
-//                            "2 Peso a Euro\n" +
-//                            "3 Peso a Libra Esterlina\n" +
-//                            "4 Peso a Yen\n" +
-//                            "5 Peso a Won\n" +
-//                            "6 Dolar a Peso\n" +
-//                            "7 Euro a Peso\n" +
-//                            "8 Libra Esterlina a Peso\n" +
-//                            "9 Yen a Peso\n" +
-//                            "10 Won a Peso\n" +
-//                            "11 Volver");
-
-//    public void getCurrency1(){
-//
-//    }
     private static Double getTag(String paisBase, String paisFinal){
         return Tasas.getHash(paisFinal) / Tasas.getHash(paisBase);
     }
