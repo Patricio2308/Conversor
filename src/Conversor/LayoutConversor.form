@@ -98,6 +98,7 @@
                   <horizontalAlignment value="0"/>
                   <opaque value="true"/>
                   <requestFocusEnabled value="true"/>
+                  <scrollOffset value="0"/>
                 </properties>
               </component>
             </children>
@@ -116,13 +117,17 @@
           </component>
         </children>
       </grid>
-      <grid id="98f72" binding="BarraMenu" layout-manager="BorderLayout" hgap="0" vgap="0">
+      <grid id="98f72" binding="barraMenu" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints border-constraint="North"/>
-        <properties/>
+        <properties>
+          <background color="-12499888"/>
+          <opaque value="true"/>
+          <visible value="true"/>
+        </properties>
         <border type="none"/>
         <children>
           <grid id="7b13" class="javax.swing.JMenuBar" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-            <constraints border-constraint="Center"/>
+            <constraints border-constraint="West"/>
             <properties>
               <background color="-12499888"/>
               <borderPainted value="false"/>
